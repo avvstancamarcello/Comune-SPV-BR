@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "Comune SPV",
+    "slug": "comune-spv-app-v3-1",
+    "version": "3.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "android": {
+      "package": "it.spv.comuneapp",
+      "permissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
+    },
+    "ios": {
+      "bundleIdentifier": "it.spv.comuneapp"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Consenti all'app di accedere alle immagini per allegarle a una segnalazione.",
+          "cameraPermission": "Consenti all'app di utilizzare la fotocamera per documentare una segnalazione.",
+          "microphonePermission": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Consenti all'app di utilizzare la posizione per localizzare la segnalazione."
+        }
+      ],
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "61837cbe-3028-4540-8fc0-4672ad1e63f7"
+      }
+    }
+  }
+}

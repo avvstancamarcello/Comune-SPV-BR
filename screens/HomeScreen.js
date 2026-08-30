@@ -1,6 +1,7 @@
 import React from "react";
 import { ScrollView, View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { LINKS } from "../config/links";
 
 function Card({ title, subtitle, icon, onPress }) {
   return (
@@ -25,7 +26,7 @@ export default function HomeScreen({ onNavigate, openWebView }) {
           title="Sito comunale"
           subtitle="Apri www.spv.br.it"
           icon="globe-outline"
-          onPress={() => openWebView("Comune SPV", "https://www.spv.br.it/")}
+          onPress={() => openWebView("Comune SPV", LINKS.home)}
         />
         <Card
           title="Segnala"

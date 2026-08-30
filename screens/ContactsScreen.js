@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { LINKS } from "../config/links";
 
 export default function ContactsScreen({ openWebView }) {
   return (
@@ -12,7 +13,7 @@ export default function ContactsScreen({ openWebView }) {
 
       <TouchableOpacity
         style={styles.button}
-        onPress={() => openWebView("Contatti Comune SPV", "https://www.spv.br.it/")}
+        onPress={() => openWebView("Contatti Comune SPV", LINKS.home)}
       >
         <Ionicons name="globe-outline" size={22} color="#fff" />
         <Text style={styles.buttonText}>Apri il sito ufficiale</Text>

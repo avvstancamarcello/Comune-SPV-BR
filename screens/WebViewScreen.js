@@ -21,7 +21,6 @@ const HTTPS_UPGRADE_HOSTS = [
   "www.halleyweb.com"
 ];
 
-const [webUrl, setWebUrl] = useState(url);
 
 const EXTERNAL_SCHEMES = [
   "mailto:",
@@ -217,7 +216,7 @@ export default function WebViewScreen({
 
       <WebView
         ref={ref}
-        source={{ uri: weburl }}
+        source={{ uri: webUrl }}
         javaScriptEnabled
         domStorageEnabled
         sharedCookiesEnabled

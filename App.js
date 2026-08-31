@@ -12,19 +12,25 @@ import Header from "./components/Header";
 import BottomNav from "./components/BottomNav";
 
 import HomeScreen from "./screens/HomeScreen";
+import SearchScreen from "./screens/SearchScreen";
 import ServicesScreen from "./screens/ServicesScreen";
 import ReportScreen from "./screens/ReportScreen";
 import HistoryScreen from "./screens/HistoryScreen";
 import ContactsScreen from "./screens/ContactsScreen";
 import WebViewScreen from "./screens/WebViewScreen";
+import TerritoryScreen from "./screens/TerritoryScreen";
 
 export default function App() {
   const [activeScreen, setActiveScreen] = useState("home");
   const [webPage, setWebPage] = useState(null);
   const [historyRefresh, setHistoryRefresh] = useState(0);
+  const [language, setLanguage] = useState("it");
 
   const openWebView = (title, url) =>
-    setWebPage({ title, url });
+    setWebPage({
+      title,
+      url
+    });
 
   if (webPage) {
     return (
@@ -33,6 +39,7 @@ export default function App() {
           <StatusBar style="light" />
 
           <WebViewScreen
+            language={language}
             title={webPage.title}
             url={webPage.url}
             onClose={() => setWebPage(null)}
@@ -48,6 +55,28 @@ export default function App() {
     case "services":
       screen = (
         <ServicesScreen
+          language={language}
+          openWebView={openWebView}
+          onNavigate={setActiveScreen}
+        />
+      );
+      break;
+
+    case "search":
+      screen = (
+        <SearchScreen
+          language={language}
+          onLanguageChange={setLanguage}
+          onNavigate={setActiveScreen}
+        />
+      );
+      break;
+
+    case "territory":
+      screen = (
+        <TerritoryScreen
+          language={language}
+          onNavigate={setActiveScreen}
           openWebView={openWebView}
         />
       );
@@ -56,6 +85,7 @@ export default function App() {
     case "report":
       screen = (
         <ReportScreen
+          language={language}
           onSaved={() => {
             setHistoryRefresh((x) => x + 1);
             setActiveScreen("history");
@@ -67,6 +97,7 @@ export default function App() {
     case "history":
       screen = (
         <HistoryScreen
+          language={language}
           refreshKey={historyRefresh}
         />
       );
@@ -75,6 +106,7 @@ export default function App() {
     case "contacts":
       screen = (
         <ContactsScreen
+          language={language}
           openWebView={openWebView}
         />
       );
@@ -83,6 +115,7 @@ export default function App() {
     default:
       screen = (
         <HomeScreen
+          language={language}
           onNavigate={setActiveScreen}
           openWebView={openWebView}
         />
@@ -94,11 +127,14 @@ export default function App() {
       <SafeAreaView style={styles.container}>
         <StatusBar style="light" />
 
-        <Header />
+        <Header
+          language={language}
+        />
 
         {screen}
 
         <BottomNav
+          language={language}
           activeScreen={activeScreen}
           onChange={setActiveScreen}
         />

@@ -1,3 +1,4 @@
+import PersonaggiIllustri from "../components/PersonaggiIllustri";
 import React from "react";
 
 import {
@@ -81,6 +82,8 @@ export default function TerritoryScreen({
       <Text style={styles.subtitle}>
         {t.subtitle}
       </Text>
+
+      <PersonaggiIllustri language={language} fullWidth />
 
       {PLACES.map((place) => (
         <View

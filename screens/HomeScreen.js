@@ -8,9 +8,9 @@ import {
   StyleSheet
 } from "react-native";
 
-import {
-  Ionicons
-} from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
+
+import PersonaggiIllustri from "../components/PersonaggiIllustri";
 
 const TRANSLATIONS = {
   it: {
@@ -78,6 +78,7 @@ function Card({
     <TouchableOpacity
       style={styles.card}
       onPress={onPress}
+      accessibilityRole="button"
     >
       <Ionicons
         name={icon}
@@ -173,6 +174,10 @@ export default function HomeScreen({
           onPress={() =>
             onNavigate("services")
           }
+        />
+
+        <PersonaggiIllustri
+          language={language}
         />
       </View>
     </ScrollView>

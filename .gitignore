@@ -5,3 +5,11 @@ web-build/
 *.log
 .DS_Store
 *.bkp
+backup-personaggi-*/
+upgrade-personaggi*/
+*.hold
+screens/old-homescreen.js
+screens/ServiceScreen.js
+*:Zone.Identifier
+
+upgrade-personaggi*.zip*

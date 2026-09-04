@@ -9,9 +9,10 @@
       "distribution": "internal"
     },
     "preview": {
-      "distribution": "internal",
-      "android": {
-        "buildType": "apk"
+  "distribution": "internal",
+  "autoIncrement": true,
+  "android": {
+    "buildType": "apk"
      }
     },
     "production": {

@@ -9,7 +9,8 @@ import {
   StyleSheet,
   Image,
   Alert,
-  ActivityIndicator
+  ActivityIndicator,
+  Linking
 } from "react-native";
 
 import { Ionicons } from "@expo/vector-icons";
@@ -240,6 +241,102 @@ const CATEGORIES = [
   }
 ];
 
+const DESTINATIONS = {
+  impregico: {
+    url:
+      "https://www.impregico.it/san-pietro-vernotico/"
+  },
+
+  police: {
+    url:
+      "https://www.spv.br.it/orario-pubblico"
+  }
+};
+
+const ROUTING_TEXT = {
+  it: {
+    destinationTitle: "Destinazione della segnalazione",
+    protocolDestination: "Protocollo comunale",
+    continue: "Salva e continua",
+    stored:
+      "La segnalazione è stata salvata nello storico locale.",
+    openImpregico: "Apri IMPREGICO",
+    openPolice: "Apri Polizia Locale",
+    wasteDestination:
+      "Per questa categoria puoi proseguire sulla pagina del gestore della raccolta rifiuti.",
+    policeDestination:
+      "Per questa categoria puoi consultare i recapiti e gli orari della Polizia Locale.",
+    localDestination:
+      "La segnalazione resta salvata come bozza locale. Potrà essere successivamente inoltrata al Protocollo comunale.",
+    openError:
+      "Non è stato possibile aprire la pagina del servizio."
+  },
+
+  en: {
+    destinationTitle: "Report destination",
+    protocolDestination: "Municipal Protocol Office",
+    continue: "Save and continue",
+    stored:
+      "The report has been saved in the local history.",
+    openImpregico: "Open IMPREGICO",
+    openPolice: "Open Local Police",
+    wasteDestination:
+      "For this category you can continue on the waste collection operator's page.",
+    policeDestination:
+      "For this category you can view Local Police contacts and opening hours.",
+    localDestination:
+      "The report remains saved as a local draft and can later be sent to the municipal Protocol Office.",
+    openError:
+      "The service page could not be opened."
+  },
+
+  de: {
+    destinationTitle: "Empfänger der Meldung",
+    protocolDestination: "Protokollstelle der Gemeinde",
+    continue: "Speichern und fortfahren",
+    stored:
+      "Die Meldung wurde im lokalen Verlauf gespeichert.",
+    openImpregico: "IMPREGICO öffnen",
+    openPolice: "Ortspolizei öffnen",
+    wasteDestination:
+      "Für diese Kategorie können Sie auf der Seite des Abfallentsorgers fortfahren.",
+    policeDestination:
+      "Für diese Kategorie können Sie Kontakte und Öffnungszeiten der Ortspolizei aufrufen.",
+    localDestination:
+      "Die Meldung bleibt als lokaler Entwurf gespeichert und kann später an die Protokollstelle der Gemeinde gesendet werden.",
+    openError:
+      "Die Serviceseite konnte nicht geöffnet werden."
+  }
+};
+
+function getDestination(category) {
+  if (category === "waste") {
+    return {
+      id: "impregico",
+      status: "to-forward-impregico",
+      statusLabel: "Da inoltrare a IMPREGICO"
+    };
+  }
+
+  if (
+    category === "roads" ||
+    category === "lighting" ||
+    category === "signage"
+  ) {
+    return {
+      id: "police",
+      status: "to-forward-police",
+      statusLabel: "Da inoltrare alla Polizia Locale"
+    };
+  }
+
+  return {
+    id: "local",
+    status: "local-draft",
+    statusLabel: "Bozza locale"
+  };
+}
+
 function makeId() {
   const d = new Date();
 
@@ -261,6 +358,10 @@ export default function ReportScreen({
   const t =
     TRANSLATIONS[language] ||
     TRANSLATIONS.it;
+
+  const routingText =
+    ROUTING_TEXT[language] ||
+    ROUTING_TEXT.it;
 
   const [category, setCategory] =
     useState("");
@@ -365,6 +466,27 @@ export default function ReportScreen({
     }
   };
 
+  const openDestination = async (url) => {
+    try {
+      const supported =
+        await Linking.canOpenURL(url);
+
+      if (!supported) {
+        throw new Error(
+          "Unsupported URL"
+        );
+      }
+
+      await Linking.openURL(url);
+
+    } catch {
+      Alert.alert(
+        t.saveErrorTitle,
+        routingText.openError
+      );
+    }
+  };
+
   const saveReport = async () => {
     if (!category) {
       Alert.alert(
@@ -405,6 +527,9 @@ export default function ReportScreen({
             item.id === category
         );
 
+      const destination =
+        getDestination(category);
+
       const report = {
         id: makeId(),
 
@@ -427,11 +552,14 @@ export default function ReportScreen({
 
         location,
 
+        destination:
+          destination.id,
+
         status:
-          "local-draft",
+          destination.status,
 
         statusLabel:
-          t.localDraft,
+          destination.statusLabel,
 
         createdAt:
           new Date().toISOString()
@@ -449,22 +577,63 @@ export default function ReportScreen({
       setPhoto(null);
       setLocation(null);
 
+      let message =
+        `ID: ${report.id}\n\n` +
+        routingText.stored;
+
+      const buttons = [];
+
+      if (
+        destination.id ===
+        "impregico"
+      ) {
+        message +=
+          `\n\n${routingText.wasteDestination}`;
+
+        buttons.push({
+          text:
+            routingText.openImpregico,
+          onPress: () =>
+            openDestination(
+              DESTINATIONS.impregico.url
+            )
+        });
+
+      } else if (
+        destination.id ===
+        "police"
+      ) {
+        message +=
+          `\n\n${routingText.policeDestination}`;
+
+        buttons.push({
+          text:
+            routingText.openPolice,
+          onPress: () =>
+            openDestination(
+              DESTINATIONS.police.url
+            )
+        });
+
+      } else {
+        message +=
+          `\n\n${routingText.localDestination}`;
+      }
+
+      buttons.push({
+        text: t.openHistory,
+        onPress: () =>
+          onSaved?.()
+      });
+
+      buttons.push({
+        text: t.ok
+      });
+
       Alert.alert(
         t.saved,
-
-        `ID: ${report.id}\n\n${t.storedMessage}`,
-
-        [
-          {
-            text: t.openHistory,
-            onPress: () =>
-              onSaved?.()
-          },
-
-          {
-            text: t.ok
-          }
-        ]
+        message,
+        buttons
       );
 
     } catch {
@@ -531,6 +700,80 @@ export default function ReportScreen({
           );
         })}
       </View>
+
+      {!!category && (
+        <View style={styles.routingBox}>
+          <Text style={styles.routingTitle}>
+            {routingText.destinationTitle}
+          </Text>
+
+          {getDestination(category).id ===
+          "impregico" ? (
+            <>
+              <Text style={styles.routingDescription}>
+                {routingText.wasteDestination}
+              </Text>
+
+              <TouchableOpacity
+                style={styles.routingButton}
+                onPress={() =>
+                  openDestination(
+                    DESTINATIONS.impregico.url
+                  )
+                }
+                accessibilityRole="link"
+              >
+                <Ionicons
+                  name="trash-outline"
+                  size={21}
+                  color="#ffffff"
+                />
+
+                <Text style={styles.routingButtonText}>
+                  {routingText.openImpregico}
+                </Text>
+              </TouchableOpacity>
+            </>
+          ) : getDestination(category).id ===
+            "police" ? (
+            <>
+              <Text style={styles.routingDescription}>
+                {routingText.policeDestination}
+              </Text>
+
+              <TouchableOpacity
+                style={styles.routingButton}
+                onPress={() =>
+                  openDestination(
+                    DESTINATIONS.police.url
+                  )
+                }
+                accessibilityRole="link"
+              >
+                <Ionicons
+                  name="shield-outline"
+                  size={21}
+                  color="#ffffff"
+                />
+
+                <Text style={styles.routingButtonText}>
+                  {routingText.openPolice}
+                </Text>
+              </TouchableOpacity>
+            </>
+          ) : (
+            <>
+              <Text style={styles.protocolName}>
+                {routingText.protocolDestination}
+              </Text>
+
+              <Text style={styles.routingDescription}>
+                {routingText.localDestination}
+              </Text>
+            </>
+          )}
+        </View>
+      )}
 
       <Text style={styles.section}>
         2. {t.description}
@@ -687,7 +930,7 @@ export default function ReportScreen({
             />
 
             <Text style={styles.saveText}>
-              {t.save}
+              {routingText.continue}
             </Text>
           </>
         )}
@@ -752,6 +995,52 @@ const styles = StyleSheet.create({
   chipTextActive: {
     color: "#ffffff",
     fontWeight: "700"
+  },
+
+  routingBox: {
+    marginTop: 10,
+    padding: 14,
+    backgroundColor: "#eaf2f8",
+    borderWidth: 1,
+    borderColor: "#b7d0e3",
+    borderRadius: 12
+  },
+
+  routingTitle: {
+    fontSize: 16,
+    fontWeight: "700",
+    color: "#17354f"
+  },
+
+  routingDescription: {
+    marginTop: 7,
+    color: "#374151",
+    lineHeight: 20
+  },
+
+  protocolName: {
+    marginTop: 8,
+    fontSize: 16,
+    fontWeight: "700",
+    color: "#0f4c81"
+  },
+
+  routingButton: {
+    marginTop: 12,
+    minHeight: 48,
+    paddingHorizontal: 12,
+    backgroundColor: "#0f4c81",
+    borderRadius: 10,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 8
+  },
+
+  routingButtonText: {
+    color: "#ffffff",
+    fontWeight: "700",
+    textAlign: "center"
   },
 
   input: {

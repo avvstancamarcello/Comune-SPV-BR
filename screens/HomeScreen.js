@@ -12,23 +12,30 @@ import { Ionicons } from "@expo/vector-icons";
 
 import PersonaggiIllustri from "../components/PersonaggiIllustri";
 
+import {
+  AvvisiComune,
+  BeniArchitettonici,
+  ContattiComunali,
+  FarmacieServiziSanitari
+} from "../components/HomeDirectories";
+
 const TRANSLATIONS = {
   it: {
     title: "Servizi al cittadino",
     intro:
       "Consulta il portale comunale e accedi ai principali servizi dell'App.",
-    website: "Sito comunale",
+    website: "Sito Ufficiale del Comune",
     websiteSub: "Apri www.spv.br.it",
-    search: "Cerca",
-    searchSub: "Cerca informazioni e servizi",
-    territory: "Territorio",
-    territorySub: "Luoghi e punti di interesse",
-    report: "Segnala",
-    reportSub: "Foto, GPS e descrizione",
-    history: "Storico",
-    historySub: "Segnalazioni salvate",
-    services: "Servizi",
-    servicesSub: "Collegamenti comunali"
+    search: "Cerca e scegli la Lingua",
+    searchSub: "Ricerca e selezione IT · EN · DE",
+    territory: "Territorio: Farmacie - Luoghi di Culto - Cimitero Comunale",
+    territorySub: "Consulta luoghi e servizi sul territorio",
+    report: "Segnala luoghi e Richiedi Interventi",
+    reportSub: "Invia posizione, foto e richiesta",
+    history: "Storico tue Segnalazioni",
+    historySub: "Consulta le segnalazioni salvate",
+    services: "Servizi Comunali",
+    servicesSub: "Accedi ai servizi del Comune"
   },
 
   en: {
@@ -37,8 +44,8 @@ const TRANSLATIONS = {
       "Access the municipal portal and the main services available in the app.",
     website: "Municipal website",
     websiteSub: "Open www.spv.br.it",
-    search: "Search",
-    searchSub: "Search information and services",
+    search: "Search and choose language",
+    searchSub: "Search and select IT · EN · DE",
     territory: "Territory",
     territorySub: "Places and points of interest",
     report: "Report",
@@ -55,8 +62,8 @@ const TRANSLATIONS = {
       "Greifen Sie auf das Gemeindeportal und die wichtigsten Dienste der App zu.",
     website: "Gemeinde-Website",
     websiteSub: "www.spv.br.it öffnen",
-    search: "Suche",
-    searchSub: "Informationen und Dienste suchen",
+    search: "Suchen und Sprache wählen",
+    searchSub: "Suche und Auswahl IT · EN · DE",
     territory: "Gemeindegebiet",
     territorySub: "Orte und Sehenswürdigkeiten",
     report: "Problem melden",
@@ -140,13 +147,21 @@ export default function HomeScreen({
           }
         />
 
-        <Card
-          title={t.territory}
-          subtitle={t.territorySub}
-          icon="map-outline"
-          onPress={() =>
-            onNavigate("territory")
-          }
+        <BeniArchitettonici
+          language={language}
+        />
+
+        <PersonaggiIllustri
+          language={language}
+        />
+
+        <AvvisiComune
+          language={language}
+          openWebView={openWebView}
+        />
+
+        <FarmacieServiziSanitari
+          language={language}
         />
 
         <Card
@@ -176,8 +191,18 @@ export default function HomeScreen({
           }
         />
 
-        <PersonaggiIllustri
+        <ContattiComunali
           language={language}
+          openWebView={openWebView}
+        />
+
+        <Card
+          title={t.territory}
+          subtitle={t.territorySub}
+          icon="map-outline"
+          onPress={() =>
+            onNavigate("territory")
+          }
         />
       </View>
     </ScrollView>

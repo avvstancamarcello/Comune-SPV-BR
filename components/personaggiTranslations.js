@@ -1,6 +1,6 @@
 export const TRANSLATIONS = {
   it: {
-    title: "Personaggi illustri",
+    title: "Personaggi Illustri",
 
     subtitle:
       "Storia e cultura di San Pietro Vernotico",

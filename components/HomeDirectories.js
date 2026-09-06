@@ -184,10 +184,10 @@ export function BeniArchitettonici(props) {
   return <HomeDirectory {...props} kind="buildings" />;
 }
 
-function OfficialEntry({ language = "it", type, openWebView, backgroundColor = "#fff" }) {
+function OfficialEntry({ language = "it", type, openWebView, onNavigate, backgroundColor = "#fff" }) {
   const labels = {
     it: {
-      contacts: ["Contatti Comunali Ufficiali", "Uffici, telefoni e orari"],
+      contacts: ["Contatti Comunali Ufficiali", "Uffici, telefoni e Polizia Municipale"],
       notices: ["Avvisi del Comune", "Ultime notizie istituzionali"]
     },
     en: {
@@ -205,7 +205,9 @@ function OfficialEntry({ language = "it", type, openWebView, backgroundColor = "
   return (
     <TouchableOpacity
       style={[styles.entry, { backgroundColor }]}
-      onPress={() => typeof openWebView === "function" ? openWebView(title, url) : Linking.openURL(url)}
+      onPress={() => type === "contacts" && typeof onNavigate === "function"
+        ? onNavigate("contacts")
+        : typeof openWebView === "function" ? openWebView(title, url) : Linking.openURL(url)}
       accessibilityRole="button"
       accessibilityLabel={title}
     >

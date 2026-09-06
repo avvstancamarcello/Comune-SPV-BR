@@ -5,7 +5,10 @@ import {
   View,
   Text,
   TouchableOpacity,
-  StyleSheet
+  StyleSheet,
+  Alert,
+  BackHandler,
+  Platform
 } from "react-native";
 
 import { Ionicons } from "@expo/vector-icons";
@@ -38,6 +41,13 @@ const TRANSLATIONS = {
     servicesSub: "Accedi ai servizi del Comune"
     ,media: "Video e testimonianze",
     mediaSub: "Il paese, Domenico Modugno e i ricordi degli artisti"
+    ,exit: "Esci e chiudi App",
+    exitSub: "Termina la sessione e chiudi l'applicazione",
+    exitTitle: "Chiudere l'App?",
+    exitMessage: "Vuoi uscire e chiudere l'applicazione?",
+    cancel: "Annulla",
+    confirmExit: "Esci",
+    iosExit: "Su iPhone puoi uscire dall'App utilizzando il gesto di sistema."
   },
 
   en: {
@@ -58,6 +68,9 @@ const TRANSLATIONS = {
     servicesSub: "Municipal links"
     ,media: "Videos and testimonials",
     mediaSub: "The town, Domenico Modugno and artists' memories"
+    ,exit: "Exit and close App", exitSub: "End the session and close the application",
+    exitTitle: "Close the App?", exitMessage: "Do you want to exit and close the application?",
+    cancel: "Cancel", confirmExit: "Exit", iosExit: "On iPhone, leave the App using the system gesture."
   },
 
   de: {
@@ -78,6 +91,9 @@ const TRANSLATIONS = {
     servicesSub: "Kommunale Links"
     ,media: "Videos und Erinnerungen",
     mediaSub: "Der Ort, Domenico Modugno und Künstlerstimmen"
+    ,exit: "App verlassen", exitSub: "Sitzung beenden und Anwendung schließen",
+    exitTitle: "App schließen?", exitMessage: "Möchten Sie die Anwendung verlassen und schließen?",
+    cancel: "Abbrechen", confirmExit: "Beenden", iosExit: "Auf dem iPhone verlassen Sie die App mit der Systemgeste."
   }
 };
 
@@ -86,11 +102,12 @@ function Card({
   subtitle,
   icon,
   backgroundColor,
+  fullWidth = false,
   onPress
 }) {
   return (
     <TouchableOpacity
-      style={[styles.card, { backgroundColor }]}
+      style={[styles.card, fullWidth && styles.fullWidthCard, { backgroundColor }]}
       onPress={onPress}
       accessibilityRole="button"
     >
@@ -119,6 +136,18 @@ export default function HomeScreen({
   const t =
     TRANSLATIONS[language] ||
     TRANSLATIONS.it;
+
+  const requestExit = () => {
+    if (Platform.OS !== "android") {
+      Alert.alert(t.exitTitle, t.iosExit);
+      return;
+    }
+
+    Alert.alert(t.exitTitle, t.exitMessage, [
+      { text: t.cancel, style: "cancel" },
+      { text: t.confirmExit, style: "destructive", onPress: () => BackHandler.exitApp() }
+    ]);
+  };
 
   return (
     <ScrollView
@@ -211,6 +240,7 @@ export default function HomeScreen({
           language={language}
           backgroundColor="#f5e8d2"
           openWebView={openWebView}
+          onNavigate={onNavigate}
         />
 
         <Card
@@ -229,6 +259,15 @@ export default function HomeScreen({
           icon="videocam-outline"
           backgroundColor="#f7dfef"
           onPress={() => onNavigate("media")}
+        />
+
+        <Card
+          title={t.exit}
+          subtitle={t.exitSub}
+          icon="exit-outline"
+          backgroundColor="#f6e3e3"
+          fullWidth
+          onPress={requestExit}
         />
       </View>
     </ScrollView>
@@ -268,6 +307,11 @@ const styles = StyleSheet.create({
     padding: 14,
     marginBottom: 14,
     elevation: 2
+  },
+
+  fullWidthCard: {
+    width: "100%",
+    minHeight: 112
   },
 
   cardTitle: {

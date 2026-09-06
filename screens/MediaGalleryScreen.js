@@ -28,7 +28,7 @@ const MEDIA = [
     color: "#1877f2",
     title: "La testimonianza di Al Bano",
     description: "Il saluto di Al Bano e i suoi ricordi della conoscenza con Domenico Modugno.",
-    url: "https://www.facebook.com/reel/1813422023408010/"
+    url: "https://www.facebook.com/61580521200876/videos/il-saluto-del-grande-albano-con-gli-emozionanti-aneddoti-sulla-conoscenza-con-do/1813422023408010/"
   },
   {
     id: "lino-banfi-testimonianza",
@@ -37,17 +37,18 @@ const MEDIA = [
     color: "#1877f2",
     title: "La testimonianza di Lino Banfi",
     description: "Il saluto dell'attore Lino Banfi nel ricordo di Domenico Modugno e del suo legame con San Pietro Vernotico.",
-    url: "https://www.facebook.com/reel/1763072174828211/"
+    url: "https://www.facebook.com/61580521200876/videos/e-non-poteva-mancare-il-saluto-di-un-altro-grande-artista-come-lino-banfi-maria-/1763072174828211/"
   }
 ];
 
 async function openMedia(url) {
   try {
-    const supported = await Linking.canOpenURL(url);
-    if (!supported) throw new Error("unsupported");
     await Linking.openURL(url);
   } catch {
-    Alert.alert("Video non disponibile", "Non è stato possibile aprire il collegamento. Verifica la connessione Internet e riprova.");
+    Alert.alert(
+      "Impossibile aprire il video",
+      "Il collegamento non è stato aperto dal dispositivo. Prova ad aggiornare o installare il browser, YouTube o Facebook."
+    );
   }
 }
 

@@ -39,5 +39,17 @@ export const ARCHITECTURAL_HERITAGE = [
   item("grotta-lourdes", "Grotta della Madonna di Lourdes", "Via Lecce, San Pietro Vernotico (BR)", "Inaugurata l’8 dicembre 1954, fu dedicata ai benefattori Giovanni e Antonietta Sozzo."),
   item("ospedale-ninetto-melli", "Ospedale Ninetto Melli", "Via Lecce, San Pietro Vernotico (BR)", "Fu istituito per volontà testamentaria di Federico Melli e intitolato al figlio Ninetto, scomparso a diciannove anni. L’ospedale accolse il primo paziente il 29 gennaio 1960; contribuirono anche altri benefattori locali."),
   item("chiesa-san-giovanni-bosco", "Chiesa di San Giovanni Bosco", "Via Firenze, San Pietro Vernotico (BR)", "La parrocchia fu istituita il 31 gennaio 1974, inizialmente con sede provvisoria presso la chiesa di Sant’Antonio da Padova. Dal 1987 ha sede definitiva in via Firenze."),
-  item("campo-di-mare", "Campo di Mare", "Campo di Mare, San Pietro Vernotico (BR)", "Località balneare dell’Adriatico, marina e frazione di San Pietro Vernotico, distante circa nove chilometri dal centro. La pagina comunale ne ricorda il paesaggio, l’accoglienza turistica e l’accesso al mare predisposto anche per persone con disabilità.")
+  item("campo-di-mare", "Campo di Mare", "Campo di Mare, San Pietro Vernotico (BR)", "Località balneare dell’Adriatico, marina e frazione di San Pietro Vernotico, distante circa nove chilometri dal centro. La pagina comunale ne ricorda il paesaggio, l’accoglienza turistica e l’accesso al mare predisposto anche per persone con disabilità."),
+  {
+    id: "sala-regno-testimoni-geova",
+    title: "Sala del Regno dei Testimoni di Geova",
+    subtitle: "Luogo di culto",
+    address: "San Pietro Vernotico (BR)",
+    description: "Sala del Regno dei Testimoni di Geova presente nel territorio comunale.",
+    latitude: 40.49394224380143,
+    longitude: 18.00018739701384,
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=40.49394224380143%2C18.00018739701384",
+    mapQuery: "Sala del Regno dei Testimoni di Geova, San Pietro Vernotico",
+    verifiedAt: "06/09/2026"
+  }
 ];

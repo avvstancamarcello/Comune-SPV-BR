@@ -30,7 +30,8 @@ export const ENVIRONMENT_SECTIONS = [
     subtitle: "Geomorfologia della piana costiera",
     icon: "sunny-outline",
     text: "Il settore costiero appartiene a una piana molto dolce, impostata su depositi marini terrazzati e sedimenti sabbiosi o limoso-argillosi. Procedendo verso il mare, il reticolo di bonifica attraversa aree agricole e depressioni costiere. L'incontro tra acque convogliate, spiaggia e moto ondoso rende la foce e il litorale sistemi dinamici, sensibili all'erosione, all'accumulo dei sedimenti e agli interventi antropici.",
-    note: "Scheda predisposta per accogliere fotografie originali della spiaggia e della foce, con data, autore e punto di ripresa."
+    externalLinkTitle: "Campo di mare BR Spiaggia e Costa naturale",
+    externalLinkUrl: "https://drive.google.com/drive/folders/1pD46Cdop8895_JTpulu0MpwY2Woa9h7v"
   },
   {
     id: "landscape-history",

@@ -148,6 +148,10 @@ export default function ContactsScreen({
     );
   };
 
+  const openMunicipalPolice = () => {
+    openUrl(LINKS.poliziaMunicipale);
+  };
+
   return (
     <ScrollView
       contentContainerStyle={
@@ -229,6 +233,22 @@ export default function ContactsScreen({
           Apri il sito ufficiale
         </Text>
       </TouchableOpacity>
+
+      <Text style={styles.sectionTitle}>
+        Polizia Municipale
+      </Text>
+
+      <ContactRow
+        icon="shield-outline"
+        title="Comando di Polizia Municipale"
+        value="Scheda informativa su PoliziaMunicipale.it"
+        onPress={openMunicipalPolice}
+      />
+
+      <Text style={styles.externalNote}>
+        Collegamento a una risorsa esterna aggiuntiva,
+        distinta dal portale istituzionale del Comune.
+      </Text>
 
       <Text style={styles.sourceNote}>
         Recapiti tratti dal portale
@@ -316,6 +336,14 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontWeight: "700",
     fontSize: 15
+  },
+
+  externalNote: {
+    marginTop: 0,
+    marginBottom: 8,
+    fontSize: 12,
+    lineHeight: 17,
+    color: "#6b7280"
   },
 
   sourceNote: {

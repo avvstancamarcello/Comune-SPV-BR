@@ -2,6 +2,10 @@ export const LINKS = {
   // Portale istituzionale
   home: "https://www.spv.br.it/",
 
+  // Portale nazionale dedicato ai Comandi di Polizia Locale
+  poliziaMunicipale:
+    "https://www.poliziamunicipale.it/comune/2709/san-pietro-vernotico",
+
   // Servizi online interni al portale
   guidaServizi: "https://www.spv.br.it/guida-ai-servizi",
   areaTecnica: "https://www.spv.br.it/area-tecnica",

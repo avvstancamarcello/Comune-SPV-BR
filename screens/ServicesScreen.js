@@ -16,6 +16,11 @@ const ITEMS = [
     LINKS.home
   ],
   [
+    "Comando di Polizia Municipale",
+    "shield-outline",
+    LINKS.poliziaMunicipale
+  ],
+  [
     "Guida ai Servizi",
     "information-circle-outline",
     LINKS.guidaServizi

@@ -19,6 +19,8 @@ import HistoryScreen from "./screens/HistoryScreen";
 import ContactsScreen from "./screens/ContactsScreen";
 import WebViewScreen from "./screens/WebViewScreen";
 import TerritoryScreen from "./screens/TerritoryScreen";
+import EnvironmentalHeritageScreen from "./screens/EnvironmentalHeritageScreen";
+import MediaGalleryScreen from "./screens/MediaGalleryScreen";
 
 export default function App() {
   const [activeScreen, setActiveScreen] = useState("home");
@@ -80,6 +82,14 @@ export default function App() {
           openWebView={openWebView}
         />
       );
+      break;
+
+    case "environment":
+      screen = <EnvironmentalHeritageScreen language={language} />;
+      break;
+
+    case "media":
+      screen = <MediaGalleryScreen language={language} />;
       break;
 
     case "report":

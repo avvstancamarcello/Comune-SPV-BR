@@ -1,0 +1,222 @@
+[
+  {
+    "id": "leccio",
+    "group": "flora",
+    "scientificName": "Quercus ilex",
+    "file": "assets/beni-ambientali/flora/leccio.webp",
+    "commonsTitle": "File:Jardín Botánico Olarizu - Bellota de encina 01.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jard%C3%ADn_Bot%C3%A1nico_Olarizu_-_Bellota_de_encina_01.jpg",
+    "author": "Basotxerri",
+    "license": "CC BY-SA 4.0",
+    "credit": "Own work"
+  },
+  {
+    "id": "roverella",
+    "group": "flora",
+    "scientificName": "Quercus pubescens",
+    "file": "assets/beni-ambientali/flora/roverella.webp",
+    "commonsTitle": "File:MarmoreTerniRoverella1.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:MarmoreTerniRoverella1.jpg",
+    "author": "LigaDue",
+    "license": "CC BY-SA 4.0",
+    "credit": "Own work"
+  },
+  {
+    "id": "quercia-dalechampii",
+    "group": "flora",
+    "scientificName": "Quercus dalechampii",
+    "file": "assets/beni-ambientali/flora/quercia-dalechampii.webp",
+    "commonsTitle": "File:Quercus dalechampii.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Quercus_dalechampii.jpg",
+    "author": "Marcobarci",
+    "license": "CC BY-SA 4.0",
+    "credit": "Own work"
+  },
+  {
+    "id": "quercia-virgiliana",
+    "group": "flora",
+    "scientificName": "Quercus virgiliana",
+    "file": "assets/beni-ambientali/flora/quercia-virgiliana.webp",
+    "commonsTitle": "File:Quercus pubescens MHNT.BOT.2007.43.65.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Quercus_pubescens_MHNT.BOT.2007.43.65.jpg",
+    "author": "Roger Culos",
+    "license": "CC BY-SA 3.0",
+    "credit": "Own work"
+  },
+  {
+    "id": "olmo-campestre",
+    "group": "flora",
+    "scientificName": "Ulmus minor",
+    "file": "assets/beni-ambientali/flora/olmo-campestre.webp",
+    "commonsTitle": "File:20130701Ulmus minor.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20130701Ulmus_minor.jpg",
+    "author": "AnRo0002",
+    "license": "CC0",
+    "credit": "Own work"
+  },
+  {
+    "id": "mirto",
+    "group": "flora",
+    "scientificName": "Myrtus communis",
+    "file": "assets/beni-ambientali/flora/mirto.webp",
+    "commonsTitle": "File:(MHNT) Myrtus communis subsp. tarentina.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:(MHNT)_Myrtus_communis_subsp._tarentina.jpg",
+    "author": "Didier Descouens",
+    "license": "CC BY-SA 4.0",
+    "credit": "Own work"
+  },
+  {
+    "id": "lentisco",
+    "group": "flora",
+    "scientificName": "Pistacia lentiscus",
+    "file": "assets/beni-ambientali/flora/lentisco.webp",
+    "commonsTitle": "File:02 2020 Greece photo Paolo Villa (Olympia archaeological park - mastic or Pistacia lentiscus).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:02_2020_Greece_photo_Paolo_Villa_(Olympia_archaeological_park_-_mastic_or_Pistacia_lentiscus).jpg",
+    "author": "Paolo Villa",
+    "license": "CC BY-SA 4.0",
+    "credit": "Internet Archive identifier : b3378064x https://archive.org/download/b3378064x/b3378064x.pdf IA contributor: Wellcome Library"
+  },
+  {
+    "id": "fillirea",
+    "group": "flora",
+    "scientificName": "Phillyrea latifolia",
+    "file": "assets/beni-ambientali/flora/fillirea.webp",
+    "commonsTitle": "File:(MHNT) Phillyrea latifolia flowers and leaves.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:(MHNT)_Phillyrea_latifolia_flowers_and_leaves.jpg",
+    "author": "Didier Descouens",
+    "license": "CC BY-SA 4.0",
+    "credit": "Self-photographed"
+  },
+  {
+    "id": "alaterno",
+    "group": "flora",
+    "scientificName": "Rhamnus alaternus",
+    "file": "assets/beni-ambientali/flora/alaterno.webp",
+    "commonsTitle": "File:Rhamnaceae - Rhamnus alaternus - Alaterno.JPG",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rhamnaceae_-_Rhamnus_alaternus_-_Alaterno.JPG",
+    "author": "Hectonichus",
+    "license": "CC BY-SA 3.0",
+    "credit": "Own work"
+  },
+  {
+    "id": "prugnolo",
+    "group": "flora",
+    "scientificName": "Prunus spinosa",
+    "file": "assets/beni-ambientali/flora/prugnolo.webp",
+    "commonsTitle": "File:Blackthorn or sloe (Prunus spinosa) - geograph.org.uk - 1451519.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blackthorn_or_sloe_(Prunus_spinosa)_-_geograph.org.uk_-_1451519.jpg",
+    "author": "Evelyn Simak",
+    "license": "CC BY-SA 2.0",
+    "credit": "From geograph.org.uk"
+  },
+  {
+    "id": "biancospino",
+    "group": "flora",
+    "scientificName": "Crataegus monogyna",
+    "file": "assets/beni-ambientali/flora/biancospino.webp",
+    "commonsTitle": "File:(MHNT) Crataegus monogyna - Fruits.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:(MHNT)_Crataegus_monogyna_-_Fruits.jpg",
+    "author": "Didier Descouens",
+    "license": "CC BY-SA 4.0",
+    "credit": "Own work"
+  },
+  {
+    "id": "ligustro",
+    "group": "flora",
+    "scientificName": "Ligustrum vulgare",
+    "file": "assets/beni-ambientali/flora/ligustro.webp",
+    "commonsTitle": "File:20240520 wild privet ligustr pospolity Ligustrum vulgare Medyków Katowice.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20240520_wild_privet_ligustr_pospolity_Ligustrum_vulgare_Medyk%C3%B3w_Katowice.jpg",
+    "author": "Abraham",
+    "license": "CC BY 4.0",
+    "credit": "Own work"
+  },
+  {
+    "id": "canna-palustre",
+    "group": "flora",
+    "scientificName": "Phragmites australis",
+    "file": "assets/beni-ambientali/flora/canna-palustre.webp",
+    "commonsTitle": "File:Dülmen, Hausdülmen, Heubach -- 2019 -- 3260.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Hausd%C3%BClmen,_Heubach_--_2019_--_3260.jpg",
+    "author": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "credit": "Own work"
+  },
+  {
+    "id": "giaggiolo-acqua",
+    "group": "flora",
+    "scientificName": "Iris pseudacorus",
+    "file": "assets/beni-ambientali/flora/giaggiolo-acqua.webp",
+    "commonsTitle": "File:(MHNT) Iris pseudacorus flower.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:(MHNT)_Iris_pseudacorus_flower.jpg",
+    "author": "Didier Descouens",
+    "license": "CC BY-SA 4.0",
+    "credit": "Own work"
+  },
+  {
+    "id": "equiseto",
+    "group": "flora",
+    "scientificName": "Equisetum arvense",
+    "file": "assets/beni-ambientali/flora/equiseto.webp",
+    "commonsTitle": "File:Equisetum arvense-271.JPG",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Equisetum_arvense-271.JPG",
+    "author": "Danny S.",
+    "license": "CC BY-SA 3.0",
+    "credit": "Own work"
+  },
+  {
+    "id": "poiana",
+    "group": "fauna",
+    "scientificName": "Buteo buteo",
+    "file": "assets/beni-ambientali/fauna/poiana.webp",
+    "commonsTitle": "File:Buteo lineatus - Rotschulterbussard im Flug v. B. Walker.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Buteo_lineatus_-_Rotschulterbussard_im_Flug_v._B._Walker.jpg",
+    "author": "B. Walker",
+    "license": "CC BY-SA 4.0",
+    "credit": "taken by author at Venice, Florida USA"
+  },
+  {
+    "id": "upupa",
+    "group": "fauna",
+    "scientificName": "Upupa epops",
+    "file": "assets/beni-ambientali/fauna/upupa.webp",
+    "commonsTitle": "File:008 Eurasian hoopoe eating in Keoladeo National Park Photo by Giles Laurent.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:008_Eurasian_hoopoe_eating_in_Keoladeo_National_Park_Photo_by_Giles_Laurent.jpg",
+    "author": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "credit": "Own work , from gileslaurent.com"
+  },
+  {
+    "id": "airone-cenerino",
+    "group": "fauna",
+    "scientificName": "Ardea cinerea",
+    "file": "assets/beni-ambientali/fauna/airone-cenerino.webp",
+    "commonsTitle": "File:Ardea cinerea (Grey heron) eating fish.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ardea_cinerea_(Grey_heron)_eating_fish.jpg",
+    "author": "Basile Morin",
+    "license": "CC BY-SA 4.0",
+    "credit": "Own work"
+  },
+  {
+    "id": "rana-verde",
+    "group": "fauna",
+    "scientificName": "Pelophylax esculentus",
+    "file": "assets/beni-ambientali/fauna/rana-verde.webp",
+    "commonsTitle": "File:Edible frog (Pelophylax esculentus).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edible_frog_(Pelophylax_esculentus).jpg",
+    "author": "Petar Milošević",
+    "license": "CC BY-SA 4.0",
+    "credit": "Own work , stacked image of 9 photos"
+  },
+  {
+    "id": "mollusco-acqua-dolce",
+    "group": "fauna",
+    "scientificName": "Lymnaea stagnalis",
+    "file": "assets/beni-ambientali/fauna/mollusco-acqua-dolce.webp",
+    "commonsTitle": "File:Lymnaea stagnalis 01.JPG",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lymnaea_stagnalis_01.JPG",
+    "author": "H. Zell",
+    "license": "CC BY-SA 3.0",
+    "credit": "Own work"
+  }
+]

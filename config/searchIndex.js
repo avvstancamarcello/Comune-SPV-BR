@@ -72,21 +72,21 @@ export const SEARCH_INDEX = [
   },
 
   {
-    id: "territory",
+    id: "environment",
 
     title: {
-      it: "Territorio",
-      en: "Territory",
-      de: "Gemeindegebiet"
+      it: "Beni ambientali",
+      en: "Environmental heritage",
+      de: "Naturerbe"
     },
 
     keywords: {
-      it: "territorio mappa campo di mare marina luoghi punti interesse",
-      en: "territory map campo di mare marina places points of interest",
-      de: "gemeindegebiet karte campo di mare marina orte sehenswürdigkeiten"
+      it: "beni ambientali canale siedi flora fauna boschi costa spiaggia zone umide",
+      en: "environmental heritage siedi canal flora fauna woods coast wetlands",
+      de: "naturerbe siedi kanal flora fauna wald küste feuchtgebiet"
     },
 
-    screen: "territory"
+    screen: "environment"
   },
 
   {
@@ -141,6 +141,17 @@ export const SEARCH_INDEX = [
     },
 
     screen: "territory"
+  },
+
+  {
+    id: "media",
+    title: { it: "Video e testimonianze", en: "Videos and testimonials", de: "Videos und Erinnerungen" },
+    keywords: {
+      it: "video testimonianze domenico modugno albano al bano lino banfi festival sogno volare youtube facebook paese",
+      en: "videos testimonials domenico modugno albano lino banfi festival youtube facebook town",
+      de: "videos erinnerungen domenico modugno albano lino banfi festival youtube facebook"
+    },
+    screen: "media"
   },
 
   {

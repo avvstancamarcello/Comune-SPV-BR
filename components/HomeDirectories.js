@@ -86,7 +86,7 @@ function mapUrl(place, directions = false) {
   return `https://www.google.com/maps/${mode}${encodeURIComponent(query)}`;
 }
 
-function HomeDirectory({ language = "it", kind }) {
+function HomeDirectory({ language = "it", kind, backgroundColor = "#fff" }) {
   const t = TEXT[language] || TEXT.it;
   const isPharmacy = kind === "pharmacies";
   const title = isPharmacy ? t.pharmacyTitle : t.buildingTitle;
@@ -114,7 +114,7 @@ function HomeDirectory({ language = "it", kind }) {
   return (
     <>
       <TouchableOpacity
-        style={styles.entry}
+        style={[styles.entry, { backgroundColor }]}
         onPress={() => setVisible(true)}
         accessibilityRole="button"
         accessibilityLabel={title}
@@ -184,7 +184,7 @@ export function BeniArchitettonici(props) {
   return <HomeDirectory {...props} kind="buildings" />;
 }
 
-function OfficialEntry({ language = "it", type, openWebView }) {
+function OfficialEntry({ language = "it", type, openWebView, backgroundColor = "#fff" }) {
   const labels = {
     it: {
       contacts: ["Contatti Comunali Ufficiali", "Uffici, telefoni e orari"],
@@ -204,7 +204,7 @@ function OfficialEntry({ language = "it", type, openWebView }) {
   const url = OFFICIAL_LINKS[type];
   return (
     <TouchableOpacity
-      style={styles.entry}
+      style={[styles.entry, { backgroundColor }]}
       onPress={() => typeof openWebView === "function" ? openWebView(title, url) : Linking.openURL(url)}
       accessibilityRole="button"
       accessibilityLabel={title}

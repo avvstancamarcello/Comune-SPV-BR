@@ -14,7 +14,7 @@ import {
 const TRANSLATIONS = {
   it: {
     home: "Home",
-    services: "Servizi",
+    services: "Servizi del Comune",
     search: "Cerca",
     territory: "Territorio",
     report: "Segnala",
@@ -24,7 +24,7 @@ const TRANSLATIONS = {
 
   en: {
     home: "Home",
-    services: "Services",
+    services: "Municipal services",
     search: "Search",
     territory: "Territory",
     report: "Report",
@@ -34,7 +34,7 @@ const TRANSLATIONS = {
 
   de: {
     home: "Home",
-    services: "Dienste",
+    services: "Gemeindedienste",
     search: "Suche",
     territory: "Gebiet",
     report: "Melden",
@@ -106,11 +106,11 @@ export default function BottomNav({
       />
 
       <Item
-        label={t.territory}
-        icon="map-outline"
-        active={activeScreen === "territory"}
+        label={t.services}
+        icon="business-outline"
+        active={activeScreen === "services"}
         onPress={() =>
-          onChange("territory")
+          onChange("services")
         }
       />
 

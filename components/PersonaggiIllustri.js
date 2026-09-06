@@ -14,7 +14,7 @@ const UI = {
 
 const normalized = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
-export default function PersonaggiIllustri({ language = 'it', fullWidth = false }) {
+export default function PersonaggiIllustri({ language = 'it', fullWidth = false, backgroundColor = '#ffffff' }) {
   const lang = UI[language] ? language : 'it';
   const t = TRANSLATIONS[lang] || TRANSLATIONS.it;
   const u = UI[lang];
@@ -79,7 +79,7 @@ export default function PersonaggiIllustri({ language = 'it', fullWidth = false 
 
   return h(React.Fragment, null,
     h(TouchableOpacity, {
-      style:[styles.entry, fullWidth && styles.fullWidth], onPress:() => setVisible(true),
+      style:[styles.entry, {backgroundColor}, fullWidth && styles.fullWidth], onPress:() => setVisible(true),
       accessibilityRole:'button', accessibilityLabel:`${t.title} — San Pietro Vernotico`, accessibilityHint:t.hint
     }, h(Ionicons, {name:'library-outline', size:30, color:'#0f4c81'}),
     h(Text, {style:styles.entryTitle}, t.title), h(Text, {style:styles.entryText}, t.subtitle)),

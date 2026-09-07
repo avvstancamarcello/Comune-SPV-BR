@@ -1,12 +1,13 @@
 export const ARCHITECTURAL_SOURCE = "https://www.spv.br.it/beni-architettonici";
 
-const item = (id, title, address, description, googleMapsUrl, disableMap = false) => ({
+const item = (id, title, address, description, googleMapsUrl, disableMap = false, evidenceUrl) => ({
   id,
   title,
   address,
   description,
   googleMapsUrl,
   disableMap,
+  evidenceUrl,
   mapQuery: `${title}, ${address || "San Pietro Vernotico"}`,
   sourceUrl: ARCHITECTURAL_SOURCE,
   verifiedAt: "04/09/2026"
@@ -40,6 +41,15 @@ export const ARCHITECTURAL_HERITAGE = [
   item("ospedale-ninetto-melli", "Ospedale Ninetto Melli", "Via Lecce, San Pietro Vernotico (BR)", "Fu istituito per volontà testamentaria di Federico Melli e intitolato al figlio Ninetto, scomparso a diciannove anni. L’ospedale accolse il primo paziente il 29 gennaio 1960; contribuirono anche altri benefattori locali."),
   item("chiesa-san-giovanni-bosco", "Chiesa di San Giovanni Bosco", "Via Firenze, San Pietro Vernotico (BR)", "La parrocchia fu istituita il 31 gennaio 1974, inizialmente con sede provvisoria presso la chiesa di Sant’Antonio da Padova. Dal 1987 ha sede definitiva in via Firenze."),
   item("campo-di-mare", "Campo di Mare", "Campo di Mare, San Pietro Vernotico (BR)", "Località balneare dell’Adriatico, marina e frazione di San Pietro Vernotico, distante circa nove chilometri dal centro. La pagina comunale ne ricorda il paesaggio, l’accoglienza turistica e l’accesso al mare predisposto anche per persone con disabilità."),
+  item(
+    "edificio-storico-li-fassi",
+    "Edificio storico Li Fassi",
+    "San Pietro Vernotico (BR)",
+    "Luogo di convergenza del I Raggruppamento Motorizzato Italiano nel periodo 1943–1944. L’edificio costituisce una testimonianza locale legata alla memoria storica e militare del territorio.",
+    "https://maps.app.goo.gl/Yv3wpQac3CKkPCRd6?g_st=aw",
+    false,
+    "https://maps.app.goo.gl/BnEc4Dx6kx75NK846"
+  ),
   {
     id: "sala-regno-testimoni-geova",
     title: "Sala del Regno dei Testimoni di Geova",

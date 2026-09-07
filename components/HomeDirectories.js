@@ -40,6 +40,7 @@ const TEXT = {
     call: "Chiama",
     map: "Apri su Google Maps",
     directions: "Avvia navigazione",
+    evidence: "Vedi la testimonianza fotografica",
     source: "Fonte e approfondimenti",
     official: "Apri la pagina ufficiale completa",
     checked: "Fonti consultate il",
@@ -52,7 +53,7 @@ const TEXT = {
     buildingTitle: "Architectural and religious buildings",
     buildingSub: "Browse individual places",
     back: "Back", address: "Address", hours: "Hours and information",
-    call: "Call", map: "Open in Google Maps", directions: "Start directions",
+    call: "Call", map: "Open in Google Maps", directions: "Start directions", evidence: "View photographic evidence",
     source: "Source and details", official: "Open the full official page", checked: "Sources checked on",
     offline: "Link unavailable", offlineText: "The link could not be opened."
   },
@@ -62,7 +63,7 @@ const TEXT = {
     buildingTitle: "Baudenkmäler und religiöse Gebäude",
     buildingSub: "Einzelne Orte anzeigen",
     back: "Zurück", address: "Adresse", hours: "Öffnungszeiten und Informationen",
-    call: "Anrufen", map: "In Google Maps öffnen", directions: "Navigation starten",
+    call: "Anrufen", map: "In Google Maps öffnen", directions: "Navigation starten", evidence: "Fotografischen Beleg ansehen",
     source: "Quelle und Details", official: "Vollständige offizielle Seite öffnen", checked: "Quellen geprüft am",
     offline: "Link nicht verfügbar", offlineText: "Der Link konnte nicht geöffnet werden."
   }
@@ -165,6 +166,7 @@ function HomeDirectory({ language = "it", kind, backgroundColor = "#fff" }) {
                 {!!selected.phone && <TouchableOpacity style={styles.primary} onPress={() => open(`tel:${selected.phone.replace(/[^+\d]/g, "")}`)}><Ionicons name="call-outline" size={20} color="#fff" /><Text style={styles.primaryText}>{t.call}</Text></TouchableOpacity>}
                 {!!mapUrl(selected) && <TouchableOpacity style={styles.primary} onPress={() => open(mapUrl(selected))}><Ionicons name="map-outline" size={20} color="#fff" /><Text style={styles.primaryText}>{t.map}</Text></TouchableOpacity>}
                 {!!mapUrl(selected, true) && <TouchableOpacity style={styles.primary} onPress={() => open(mapUrl(selected, true))}><Ionicons name="navigate-outline" size={20} color="#fff" /><Text style={styles.primaryText}>{t.directions}</Text></TouchableOpacity>}
+                {!!selected.evidenceUrl && <TouchableOpacity style={styles.secondary} onPress={() => open(selected.evidenceUrl)}><Ionicons name="camera-outline" size={20} color="#0f4c81" /><Text style={styles.secondaryText}>{t.evidence}</Text></TouchableOpacity>}
                 {!!(selected.sourceUrl || selected.sourceOfficial) && <TouchableOpacity style={styles.secondary} onPress={() => open(selected.sourceUrl || selected.sourceOfficial)}><Ionicons name="document-text-outline" size={20} color="#0f4c81" /><Text style={styles.secondaryText}>{t.source}</Text></TouchableOpacity>}
                 {!!selected.verifiedAt && <Text style={styles.verified}>{t.checked}: {selected.verifiedAt}</Text>}
               </View>

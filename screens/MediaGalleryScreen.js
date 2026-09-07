@@ -22,6 +22,16 @@ const MEDIA = [
     url: "https://www.youtube.com/watch?v=b7dJlLBn1bQ"
   },
   {
+    id: "volare-con-modugno-playlist",
+    platform: "YouTube · Playlist collaborativa",
+    icon: "logo-youtube",
+    color: "#c62828",
+    title: "Volare con Modugno",
+    description: "Playlist collaborativa dedicata a Domenico Modugno, ai suoi brani e ai contenuti che ne conservano la memoria artistica.",
+    actionLabel: "Apri la playlist",
+    url: "https://youtube.com/playlist?list=PLEgNApsU-fvM&si=M4Rhi5k8UsuVenrd"
+  },
+  {
     id: "albano-testimonianza",
     platform: "Facebook · Festival un sogno per volare",
     icon: "logo-facebook",
@@ -58,7 +68,7 @@ export default function MediaGalleryScreen() {
     <Text style={styles.intro}>Scopri San Pietro Vernotico attraverso filmati, ricordi e testimonianze dedicati al paese e a Domenico Modugno.</Text>
     {MEDIA.map(item => <TouchableOpacity key={item.id} style={styles.card} onPress={() => openMedia(item.url)} accessibilityRole="link" accessibilityLabel={`${item.title}. ${item.platform}`}>
       <View style={[styles.iconBox, { backgroundColor: `${item.color}18` }]}><Ionicons name={item.icon} size={34} color={item.color} /></View>
-      <View style={styles.body}><Text style={[styles.platform, { color: item.color }]}>{item.platform}</Text><Text style={styles.cardTitle}>{item.title}</Text><Text style={styles.description}>{item.description}</Text><View style={styles.action}><Text style={styles.actionText}>Guarda il video</Text><Ionicons name="open-outline" size={18} color="#0f4c81" /></View></View>
+      <View style={styles.body}><Text style={[styles.platform, { color: item.color }]}>{item.platform}</Text><Text style={styles.cardTitle}>{item.title}</Text><Text style={styles.description}>{item.description}</Text><View style={styles.action}><Text style={styles.actionText}>{item.actionLabel || "Guarda il video"}</Text><Ionicons name="open-outline" size={18} color="#0f4c81" /></View></View>
     </TouchableOpacity>)}
     <Text style={styles.note}>I contenuti sono ospitati sulle piattaforme indicate e richiedono una connessione Internet. Facebook potrebbe richiedere l'accesso al proprio account.</Text>
   </ScrollView>;

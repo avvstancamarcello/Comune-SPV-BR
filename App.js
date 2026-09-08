@@ -8,6 +8,7 @@ import {
 
 import { StatusBar } from "expo-status-bar";
 
+import DisclaimerBanner from "./components/DisclaimerBanner";
 import Header from "./components/Header";
 import BottomNav from "./components/BottomNav";
 
@@ -39,6 +40,8 @@ export default function App() {
       <SafeAreaProvider>
         <SafeAreaView style={styles.container}>
           <StatusBar style="light" />
+
+          <DisclaimerBanner />
 
           <WebViewScreen
             language={language}
@@ -136,6 +139,8 @@ export default function App() {
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
         <StatusBar style="light" />
+
+        <DisclaimerBanner />
 
         <Header
           language={language}

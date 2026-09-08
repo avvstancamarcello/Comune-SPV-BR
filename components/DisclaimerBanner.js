@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Linking } from "react-native";
+import { View, Text, StyleSheet, Linking, SafeAreaView } from "react-native";
 
 export default function DisclaimerBanner() {
   const openIOLink = () => {
@@ -7,21 +7,26 @@ export default function DisclaimerBanner() {
   };
 
   return (
-    <View style={styles.banner}>
-      <Text style={styles.text}>
-        App non ufficiale, per servizi ufficiali usa{" "}
-        <Text 
-          style={styles.link} 
-          onPress={openIOLink}
-        >
-          APP IO
+    <SafeAreaView style={styles.safeArea}>
+      <View style={styles.banner}>
+        <Text style={styles.text}>
+          App non ufficiale, per servizi ufficiali usa{" "}
+          <Text 
+            style={styles.link} 
+            onPress={openIOLink}
+          >
+            APP IO
+          </Text>
         </Text>
-      </Text>
-    </View>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    backgroundColor: "#FFF3CD",
+  },
   banner: {
     backgroundColor: "#FFF3CD",
     paddingVertical: 12,

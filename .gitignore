@@ -30,3 +30,4 @@ beni-spv-*.zip*
 *.bkp-*
 *.aab
 *.apk
+node_modules/

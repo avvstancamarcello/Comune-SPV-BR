@@ -11,12 +11,20 @@ upgrade-personaggi*/
 screens/old-homescreen.js
 screens/ServiceScreen.js
 *:Zone.Identifier
-
-upgrade-personaggi*.zip*
+.env
+.env.local
+*.jks
+*.keystore
+*.p8
+*.p12
+*.key
+credentials.json
+google-services.json
 
 # Pacchetti e backup locali degli aggiornamenti
 backup-*/
 upgrade-*/
 upgrade-*.zip*
+upgrade-personaggi*.zip*
 beni-spv-*.zip*
 *.bkp-*

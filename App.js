@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet } from "react-native";
 
 import {
@@ -7,6 +7,11 @@ import {
 } from "react-native-safe-area-context";
 
 import { StatusBar } from "expo-status-bar";
+import * as SplashScreen from 'expo-splash-screen';
+
+SplashScreen.preventAutoHideAsync();
+
+import DisclaimerBanner from "./components/DisclaimerBanner";
 
 import DisclaimerBanner from "./components/DisclaimerBanner";
 import Header from "./components/Header";

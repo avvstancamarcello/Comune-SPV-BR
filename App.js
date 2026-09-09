@@ -29,6 +29,24 @@ export default function App() {
   const [historyRefresh, setHistoryRefresh] = useState(0);
   const [language, setLanguage] = useState("it");
 
+  useEffect(() => {
+    // Delay di 3 secondi per UX - così l'occhio percepisce il logo
+    const timer = setTimeout(async () => {
+      await SplashScreen.hideAsync();
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const openWebView = (title, url) =>
+    setWebPage({
+      title,
+      url
+
+ 
+  
+  
+
   const openWebView = (title, url) =>
     setWebPage({
       title,

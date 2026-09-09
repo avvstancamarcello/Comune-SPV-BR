@@ -7,15 +7,15 @@
     "userInterfaceStyle": "light",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#1a4b9b"
     },
     "android": {
       "package": "it.spv.comuneapp",
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#1a4b9b"
       },
       "permissions": [
         "android.permission.ACCESS_COARSE_LOCATION",

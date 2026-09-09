@@ -13,7 +13,6 @@ SplashScreen.preventAutoHideAsync();
 
 import DisclaimerBanner from "./components/DisclaimerBanner";
 
-import DisclaimerBanner from "./components/DisclaimerBanner";
 import Header from "./components/Header";
 import BottomNav from "./components/BottomNav";
 
